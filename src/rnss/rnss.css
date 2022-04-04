@@ -1,0 +1,11 @@
+
+.mainFxmlClass {
+}
+
+#userRoleComboBox {
+    -fx-font: 18px "Arial";
+}
+
+#loggedInReporterMenuButton, #loggedInServiceProvider {
+    -fx-background-color: transparent;
+}

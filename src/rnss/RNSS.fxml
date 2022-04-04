@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane fx:id="mainLayout" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rnss.RNSSController">
+    <stylesheets>
+        <URL value="@rnss.css" />
+    </stylesheets>
+    <children>
+        <AnchorPane fx:id="reporterLayout" prefHeight="768.0" prefWidth="1028.0" visible="false">
+            <children>
+                <Label fx:id="reporterPersonDetailsLabel" layoutX="10.0" layoutY="22.0" prefHeight="27.0" prefWidth="200.0" text="Person Details" textFill="#48a5ea" AnchorPane.bottomAnchor="735.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="614.0" AnchorPane.topAnchor="22.0">
+                    <font>
+                        <Font name="Arial Bold" size="24.0" />
+                    </font>
+                </Label>
+                <Label fx:id="nameLabel" layoutX="12.0" layoutY="58.0" prefHeight="30.0" prefWidth="170.0" text="Name" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="811.0">
+                    <font>
+                        <Font name="Arial" size="15.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="fullNameTextField" layoutX="226.0" layoutY="58.0" prefHeight="30.0" prefWidth="323.0" AnchorPane.leftAnchor="226.0" AnchorPane.rightAnchor="479.0" />
+
+                <Label fx:id="ageCategoryLabel" layoutX="12.0" layoutY="104.0" prefHeight="30.0" prefWidth="209.0" text="Age Category" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="811.0">
+                    <font>
+                        <Font name="Arial" size="15.0" />
+                    </font>
+                </Label>
+                <ComboBox fx:id="ageCategoriesComboBox" layoutX="226.0" layoutY="104.0" prefHeight="31.0" prefWidth="323.0" promptText="Select" AnchorPane.bottomAnchor="649.0" AnchorPane.leftAnchor="226.0" AnchorPane.rightAnchor="479.0" AnchorPane.topAnchor="104.0" />
+
+                <Label fx:id="currentResidentialStatusLabel" layoutX="12.0" layoutY="149.0" prefHeight="30.0" prefWidth="170.0" text="Current residential status" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="811.0">
+                    <font>
+                        <Font name="Arial" size="15.0" />
+                    </font>
+                </Label>
+                <ComboBox fx:id="currentResidentialStatusComboBox" layoutX="226.0" layoutY="149.0" prefHeight="30.0" prefWidth="323.0" promptText="Select" AnchorPane.leftAnchor="226.0" />
+
+                <Label fx:id="genderLabel" layoutX="12.0" layoutY="194.0" prefHeight="30.0" prefWidth="170.0" text="Gender" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="811.0">
+                    <font>
+                        <Font name="Arial" size="15.0" />
+                    </font>
+                </Label>
+                <RadioButton fx:id="male" layoutX="226.0" layoutY="195.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="101.0" text="Male" AnchorPane.leftAnchor="226.0" />
+                <RadioButton fx:id="female" layoutX="338.0" layoutY="195.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="124.0" text="Female" />
+                <Label fx:id="disabledLabel" layoutX="11.0" layoutY="232.0" prefHeight="30.0" prefWidth="170.0" text="Disabled" AnchorPane.bottomAnchor="521.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="811.0" AnchorPane.topAnchor="233.0">
+                    <font>
+                        <Font name="Arial" size="15.0" />
+                    </font>
+                </Label>
+                <RadioButton fx:id="disabledRadioButton" layoutX="226.0" layoutY="233.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="101.0" text="Disabled" AnchorPane.bottomAnchor="521.0" AnchorPane.leftAnchor="226.0" AnchorPane.topAnchor="233.0" />
+                <RadioButton fx:id="notDisabledRadioButton" layoutX="337.0" layoutY="233.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="124.0" text="Not disabled" AnchorPane.bottomAnchor="521.0" AnchorPane.topAnchor="233.0" />
+
+                <Label fx:id="chronicAtEntryLabel" layoutX="12.0" layoutY="277.0" prefHeight="30.0" prefWidth="170.0" text="Chronic at entry" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="811.0">
+                    <font>
+                        <Font name="Arial" size="15.0" />
+                    </font>
+                </Label>
+                <ComboBox fx:id="chronicAtEntryComboBox" layoutX="226.0" layoutY="277.0" prefHeight="30.0" prefWidth="323.0" promptText="Select" AnchorPane.leftAnchor="226.0" />
+
+                <Label fx:id="skillsLabel" layoutX="12.0" layoutY="323.0" prefHeight="30.0" prefWidth="170.0" text="Skills" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="811.0">
+                    <font>
+                        <Font name="Arial" size="15.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="skillsTextField" layoutX="226.0" layoutY="322.0" prefHeight="31.0" prefWidth="323.0" />
+
+                <Label fx:id="incomeLabel" layoutX="12.0" layoutY="367.0" prefHeight="30.0" prefWidth="170.0" text="Income" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="811.0">
+                    <font>
+                        <Font name="Arial" size="15.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="incomeTextField" layoutX="226.0" layoutY="367.0" onKeyTyped="#incomeSourceOnIncomeChange" prefHeight="30.0" prefWidth="323.0">
+                    <font>
+                        <Font name="Arial" size="15.0" />
+                    </font>
+                </TextField>
+
+                <Label fx:id="incomeSource" layoutX="12.0" layoutY="415.0" prefHeight="30.0" prefWidth="170.0" text="Income source" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="811.0">
+                    <font>
+                        <Font name="Arial" size="15.0" />
+                    </font>
+                </Label>
+                <ComboBox fx:id="incomeSourceComboBox" layoutX="226.0" layoutY="415.0" prefHeight="30.0" prefWidth="323.0" promptText="Select" AnchorPane.leftAnchor="226.0" AnchorPane.rightAnchor="479.0" />
+
+                <Label fx:id="childrenAccompaniedLabel" layoutX="12.0" layoutY="460.0" prefHeight="30.0" prefWidth="170.0" text="Children Accompanied" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="811.0">
+                    <font>
+                        <Font name="Arial" size="15.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="childrenAccompaniedTextField" layoutX="226.0" layoutY="460.0" prefHeight="30.0" prefWidth="323.0" AnchorPane.leftAnchor="226.0" AnchorPane.rightAnchor="479.0" />
+
+                <Button fx:id="enterDataButton" layoutX="226.0" layoutY="506.0" mnemonicParsing="false" onAction="#addPerson" prefHeight="30.0" text="Enter Data">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+                <Button fx:id="submitEntriesButton" layoutX="432.0" layoutY="506.0" mnemonicParsing="false" onAction="#submitEntries" prefHeight="30.0" text="Submit Entries">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+
+                <Label fx:id="nameSignUpValidationLabel" layoutX="564.0" layoutY="58.0" prefHeight="43.0" prefWidth="296.0" textFill="RED" AnchorPane.leftAnchor="555.0" AnchorPane.rightAnchor="33.0">
+                    <font>
+                        <Font name="Arial" size="15.0" />
+                    </font>
+                </Label>
+                <Label fx:id="ageCategorySignUpValidationLabel" layoutX="562.0" layoutY="104.0" prefHeight="30.0" prefWidth="170.0" textFill="RED" AnchorPane.leftAnchor="555.0" AnchorPane.rightAnchor="33.0">
+                    <font>
+                        <Font name="Arial" size="15.0" />
+                    </font>
+                </Label>
+                <Label fx:id="currentResidentialStatusSignUpValidationLabel" layoutX="572.0" layoutY="150.0" prefHeight="30.0" prefWidth="170.0" textFill="RED" AnchorPane.leftAnchor="555.0" AnchorPane.rightAnchor="33.0">
+                    <font>
+                        <Font name="Arial" size="15.0" />
+                    </font>
+                </Label>
+                <Label fx:id="genderSignUpValidationLabel" layoutX="582.0" layoutY="189.0" prefHeight="30.0" prefWidth="170.0" textFill="RED" AnchorPane.leftAnchor="555.0" AnchorPane.rightAnchor="33.0">
+                    <font>
+                        <Font name="Arial" size="15.0" />
+                    </font>
+                </Label>
+                <Label fx:id="disabledSignUpValidationLabel" alignment="CENTER_RIGHT" layoutX="573.0" layoutY="228.0" prefHeight="30.0" prefWidth="170.0" textFill="RED" AnchorPane.leftAnchor="555.0" AnchorPane.rightAnchor="33.0">
+                    <font>
+                        <Font name="Arial" size="15.0" />
+                    </font>
+                </Label>
+                <Label fx:id="chronicAtEntrySignUpValidationLabel" layoutX="575.0" layoutY="277.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="30.0" prefWidth="170.0" textFill="RED" AnchorPane.leftAnchor="555.0" AnchorPane.rightAnchor="33.0">
+                    <font>
+                        <Font name="Arial" size="15.0" />
+                    </font>
+                </Label>
+                <Label fx:id="skillsSignUpValidationLabel" layoutX="548.0" layoutY="323.0" prefHeight="30.0" prefWidth="170.0" textFill="RED" AnchorPane.leftAnchor="555.0" AnchorPane.rightAnchor="33.0">
+                    <font>
+                        <Font name="Arial" size="15.0" />
+                    </font>
+                </Label>
+                <Label fx:id="incomeSignUpValidationLabel" layoutX="511.0" layoutY="368.0" prefHeight="30.0" prefWidth="170.0" textFill="RED" AnchorPane.leftAnchor="555.0" AnchorPane.rightAnchor="33.0">
+                    <font>
+                        <Font name="Arial" size="15.0" />
+                    </font>
+                </Label>
+                <Label fx:id="incomeSourceSignUpValidationLabel" layoutX="499.0" layoutY="415.0" prefHeight="30.0" prefWidth="170.0" textFill="RED" AnchorPane.leftAnchor="555.0" AnchorPane.rightAnchor="33.0">
+                    <font>
+                        <Font name="Arial" size="15.0" />
+                    </font>
+                </Label>
+                <Label fx:id="childrenAccompaniedSignUpValidationLabel" layoutX="490.0" layoutY="460.0" prefHeight="30.0" prefWidth="296.0" textFill="RED" AnchorPane.leftAnchor="555.0" AnchorPane.rightAnchor="33.0">
+                    <font>
+                        <Font name="Arial" size="15.0" />
+                    </font>
+                </Label>
+                <Label fx:id="addedPersonalInfoLabel" layoutX="12.0" layoutY="550.0" prefHeight="30.0" prefWidth="853.0" textFill="GREEN" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0">
+                    <font>
+                        <Font name="Arial" size="15.0" />
+                    </font>
+                </Label>
+                <TextArea fx:id="personAddedTextArea" layoutX="9.0" layoutY="582.0" prefHeight="187.0" prefWidth="541.0" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="582.0">
+                    <font>
+                        <Font name="Arial" size="15.0" />
+                    </font>
+                </TextArea>
+                <MenuButton fx:id="loggedInReporterMenuButton" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="879.0" layoutY="28.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="29.0" prefWidth="224.0" textAlignment="RIGHT" textFill="#008060" textOverrun="CENTER_WORD_ELLIPSIS" AnchorPane.bottomAnchor="753.0" AnchorPane.leftAnchor="839.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="2.0">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#signOut" style="-fx-font-weight: Bold;" text="Sign Out" />
+                    </items>
+                    <font>
+                        <Font name="Comic Sans MS Bold" size="13.0" />
+                    </font>
+                </MenuButton>
+                <Label fx:id="employeeOrganization" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="911.0" layoutY="21.0" textAlignment="RIGHT" textFill="#48a5ea" AnchorPane.bottomAnchor="740.0" AnchorPane.leftAnchor="879.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="25.0">
+                    <font>
+                        <Font name="Arial Bold" size="12.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+
+        <AnchorPane fx:id="serviceProviderLayout" prefHeight="768.0" prefWidth="1028.0">
+            <children>
+                <Label fx:id="serviceProviderChronicAtEntryLabel" layoutX="14.0" layoutY="57.0" prefHeight="20.0" prefWidth="124.0" text="Chronic at Entry" AnchorPane.bottomAnchor="706.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="890.0" AnchorPane.topAnchor="57.0">
+                    <font>
+                        <Font name="Arial Bold" size="15.0" />
+                    </font>
+                </Label>
+                <ComboBox fx:id="searchChronicAtEntryComboBox" layoutX="146.0" layoutY="54.0" prefWidth="150.0" promptText="Select" />
+                <Label layoutX="14.0" layoutY="12.0" prefHeight="30.0" prefWidth="184.0" text="Search Option" textFill="#48a5ea" AnchorPane.bottomAnchor="741.0" AnchorPane.leftAnchor="14.0">
+                    <font>
+                        <Font name="Arial Bold" size="24.0" />
+                    </font>
+                </Label>
+                <Button fx:id="searchResidenceNeedfulPersonListButton" layoutX="337.0" layoutY="54.0" mnemonicParsing="false" onAction="#searchResidenceNeedfulPersonList" prefHeight="31.0" prefWidth="86.0" text="View List">
+                    <font>
+                        <Font name="Arial Bold" size="15.0" />
+                    </font>
+                </Button>
+                <TableView fx:id="personDetailsTableView" layoutY="159.0" prefHeight="625.0" prefWidth="1028.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="109.0">
+                    <columns>
+                        <TableColumn fx:id="personFullName" prefWidth="127.0" text="Name" />
+                        <TableColumn fx:id="personAgeCategory" prefWidth="103.0" text="Age Category" />
+                        <TableColumn fx:id="personGender" prefWidth="79.0" text="Gender" />
+                        <TableColumn fx:id="personResidentialStatus" prefWidth="137.0" text="Residential Status" />
+                        <TableColumn fx:id="personDisabled" prefWidth="92.0" text="Disabled" />
+                        <TableColumn fx:id="personChronicAtEntry" prefWidth="109.0" text="Chronic" />
+                        <TableColumn fx:id="personSkills" prefWidth="109.0" text="Skills" />
+                        <TableColumn fx:id="personIncome" text="Income" />
+                        <TableColumn fx:id="personIncomeSource" prefWidth="113.0" text="Income Source" />
+                        <TableColumn fx:id="personChildrenAccompanied" prefWidth="78.0" text="Children" />
+                    </columns>
+                </TableView>
+                <MenuButton fx:id="loggedInServiceProvider" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="879.0" layoutY="2.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="28.0" prefWidth="144.0" textAlignment="RIGHT" textFill="#008060" textOverrun="CENTER_WORD_ELLIPSIS" AnchorPane.bottomAnchor="753.0" AnchorPane.leftAnchor="859.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="2.0">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#signOut" style="-fx-font-weight: Bold;" text="Sign Out" />
+                    </items>
+                    <font>
+                        <Font name="Comic Sans MS Bold" size="15.0" />
+                    </font>
+                </MenuButton>
+            </children>
+        </AnchorPane>
+
+        <AnchorPane fx:id="signUpReporterFormLayout" prefHeight="768.0" prefWidth="1024.0" visible="false">
+            <children>
+                <Label fx:id="signUpReporterFormLabel" contentDisplay="CENTER" layoutX="50.0" layoutY="31.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="27.0" prefWidth="200.0" text="Sign Up - Reporter" textAlignment="CENTER" textFill="#48a5ea" AnchorPane.bottomAnchor="734.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="31.0">
+                    <font>
+                        <Font name="Arial Bold" size="24.0" />
+                    </font>
+                </Label>
+
+                <Label fx:id="reporterTypeSignUpLabel" layoutX="20.0" layoutY="122.0" prefHeight="43.0" prefWidth="124.0" text="Reporter Type" AnchorPane.leftAnchor="20.0">
+                    <font>
+                        <Font name="Arial" size="18.0" />
+                    </font>
+                </Label>
+                <RadioButton fx:id="individualReporterType" layoutX="474.0" layoutY="132.0" mnemonicParsing="false" onAction="#hideEmploymentForm" text="Individual" AnchorPane.bottomAnchor="628.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="755.0" AnchorPane.topAnchor="121.0">
+                    <font>
+                        <Font name="Arial" size="18.0" />
+                    </font>
+                </RadioButton>
+                <RadioButton fx:id="employeeReporterType" layoutX="603.0" layoutY="132.0" mnemonicParsing="false" onAction="#showEmploymentForm" text="Employee" AnchorPane.bottomAnchor="628.0" AnchorPane.leftAnchor="275.0" AnchorPane.rightAnchor="615.0" AnchorPane.topAnchor="121.0">
+                    <font>
+                        <Font name="Arial" size="18.0" />
+                    </font>
+                </RadioButton>
+
+                <Group fx:id="individualReporterGroup" layoutX="20.0" layoutY="185.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="614.0">
+                    <children>
+                        <TextField fx:id="fullNameSignUpReporter" prefHeight="43.0" prefWidth="390.0" promptText="Full Name">
+                            <font>
+                                <Font name="Arial" size="18.0" />
+                            </font>
+                        </TextField>
+                        <TextField fx:id="emailSignUpReporter" layoutY="63.0" prefHeight="43.0" prefWidth="390.0" promptText="Email">
+                            <font>
+                                <Font name="Arial" size="18.0" />
+                            </font>
+                        </TextField>
+                        <TextField fx:id="phoneNumberSignUpReporter" layoutY="126.0" prefHeight="43.0" prefWidth="390.0" promptText="Phone number">
+                            <font>
+                                <Font name="Arial" size="18.0" />
+                            </font>
+                        </TextField>
+                        <TextField fx:id="postCodeSignUpReporter" layoutY="188.0" prefHeight="43.0" prefWidth="390.0" promptText="Postcode">
+                            <font>
+                                <Font name="Arial" size="18.0" />
+                            </font>
+                        </TextField>
+                        <PasswordField fx:id="passwordSignUpReporter" layoutY="250.0" prefHeight="43.0" prefWidth="390.0" promptText="Password">
+                            <font>
+                                <Font name="Arial" size="18.0" />
+                            </font>
+                        </PasswordField>
+                    </children>
+                </Group>
+
+                <Group fx:id="employmentReporterGroup" layoutX="581.0" layoutY="185.0" AnchorPane.leftAnchor="581.0" AnchorPane.rightAnchor="50.0">
+                    <children>
+                        <TextField fx:id="organizationOfEmployee" prefHeight="43.0" prefWidth="393.0" promptText="Organization">
+                            <font>
+                                <Font name="Arial" size="18.0" />
+                            </font>
+                        </TextField>
+                        <TextField fx:id="departmentOfEmployee" layoutY="63.0" prefHeight="43.0" prefWidth="393.0" promptText="Department">
+                            <font>
+                                <Font name="Arial" size="18.0" />
+                            </font>
+                        </TextField>
+                        <TextField fx:id="supervisorOfEmployee" layoutY="126.0" prefHeight="43.0" prefWidth="393.0" promptText="Supervisor name">
+                            <font>
+                                <Font name="Arial" size="18.0" />
+                            </font>
+                        </TextField>
+                    </children>
+                </Group>
+
+                <Label fx:id="reporterSignUpValidationSignUp" layoutX="20.0" layoutY="493.0" prefHeight="54.0" prefWidth="822.0" textFill="RED" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="182.0">
+                    <font>
+                        <Font name="Arial" size="15.0" />
+                    </font>
+                </Label>
+
+                <Button fx:id="signUpReporterButton" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="569.0" mnemonicParsing="false" onAction="#signUpReporter" prefHeight="43.0" prefWidth="175.0" style="-fx-background-color: #48a5ea;" text="Sign Up" textFill="WHITE" AnchorPane.leftAnchor="20.0">
+                    <font>
+                        <Font name="Arial Bold" size="18.0" />
+                    </font>
+                </Button>
+
+                <Label fx:id="alreadyAccountLabel" layoutX="20.0" layoutY="629.0" prefHeight="30.0" prefWidth="181.0" text="Already have an account? " AnchorPane.leftAnchor="20.0">
+                    <font>
+                        <Font name="Arial" size="15.0" />
+                    </font>
+                </Label>
+                <Hyperlink fx:id="signInReporterHyperLink" layoutX="192.0" layoutY="630.0" onAction="#signInReporterForm" prefHeight="29.0" prefWidth="63.0" text="Sign in" textFill="#48a5ea">
+                    <font>
+                        <Font name="Arial Bold" size="15.0" />
+                    </font>
+                </Hyperlink>
+
+                <Label fx:id="alreadyAccountSignInReporterLabel" layoutX="252.0" layoutY="629.0" prefHeight="30.0" prefWidth="48.0" text="here!">
+                    <font>
+                        <Font name="Arial" size="15.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+
+        <AnchorPane fx:id="mainSignLayout" layoutY="6.0" prefHeight="768.0" prefWidth="1024.0" visible="false" AnchorPane.bottomAnchor="-6.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="6.0">
+            <children>
+                <Label layoutX="415.0" layoutY="132.0" text="Select Your Role" textAlignment="CENTER" textFill="#4c596e" AnchorPane.leftAnchor="415.0" AnchorPane.rightAnchor="415.0">
+                    <font>
+                        <Font name="Arial Bold" size="24.0" />
+                    </font>
+                </Label>
+
+                <ComboBox fx:id="userRoleComboBox" layoutX="410.0" layoutY="189.0" prefHeight="43.0" prefWidth="181.0" promptText="Select" AnchorPane.bottomAnchor="536.0" AnchorPane.leftAnchor="410.0" AnchorPane.rightAnchor="410.0" AnchorPane.topAnchor="189.0" />
+
+                <Label fx:id="userRoleValidationLabel" layoutX="621.0" layoutY="189.0" prefHeight="43.0" prefWidth="362.0" textFill="RED">
+                    <font>
+                        <Font name="Arial" size="15.0" />
+                    </font>
+                </Label>
+
+                <Button fx:id="confirmRoleButton" alignment="CENTER" contentDisplay="CENTER" layoutX="420.0" layoutY="300.0" mnemonicParsing="false" onAction="#confirmUserRole" prefHeight="54.0" prefWidth="181.0" style="-fx-background-radius: 10; -fx-background-color: #48A5EA;" text="NEXT" AnchorPane.leftAnchor="420.0" AnchorPane.rightAnchor="420.0">
+                    <font>
+                        <Font name="Arial Bold" size="18.0" />
+                    </font>
+                </Button>
+
+                <Button fx:id="exitButton" layoutX="903.0" layoutY="711.0" mnemonicParsing="false" onAction="#exitRNSS" prefHeight="43.0" prefWidth="107.0" text="Exit" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="900.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="715.0">
+                    <font>
+                        <Font name="Arial Bold" size="18.0" />
+                    </font>
+                </Button>
+            </children>
+        </AnchorPane>
+
+        <AnchorPane fx:id="signInReporterFormLayout" layoutX="10.0" layoutY="10.0" prefHeight="768.0" prefWidth="1024.0" visible="false">
+            <children>
+                <Label fx:id="signInReporterFormLabel" contentDisplay="CENTER" layoutX="50.0" layoutY="31.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="27.0" prefWidth="200.0" text="Sign in - Reporter" textAlignment="CENTER" textFill="#48a5ea" AnchorPane.bottomAnchor="734.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="31.0">
+                    <font>
+                        <Font name="Arial Bold" size="24.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="emailReporter" layoutX="50.0" layoutY="95.0" prefHeight="43.0" prefWidth="390.0" promptText="Email" AnchorPane.bottomAnchor="654.0" AnchorPane.leftAnchor="49.0" AnchorPane.rightAnchor="650.0" AnchorPane.topAnchor="95.0">
+                    <font>
+                        <Font name="Arial" size="18.0" />
+                    </font>
+                </TextField>
+                <PasswordField fx:id="passwordReporter" layoutX="50.0" layoutY="154.0" prefHeight="43.0" prefWidth="504.0" promptText="Password" AnchorPane.leftAnchor="49.0" AnchorPane.rightAnchor="650.0">
+                    <font>
+                        <Font name="Arial" size="18.0" />
+                    </font>
+                </PasswordField>
+                <Button fx:id="signInReporterButton" alignment="CENTER" contentDisplay="CENTER" layoutX="49.0" layoutY="236.0" mnemonicParsing="false" onAction="#signInReporter" prefHeight="43.0" prefWidth="175.0" style="-fx-background-color: #48a5ea;" text="Sign In" textFill="WHITE" AnchorPane.leftAnchor="49.0">
+                    <font>
+                        <Font name="Arial Bold" size="18.0" />
+                    </font>
+                </Button>
+
+                <Label fx:id="haveNotAccountLabel" layoutX="49.0" layoutY="296.0" prefHeight="30.0" prefWidth="181.0" text="Have not an account yet? " AnchorPane.leftAnchor="49.0">
+                    <font>
+                        <Font name="Arial" size="15.0" />
+                    </font>
+                </Label>
+
+                <Hyperlink fx:id="signUpReporterHyperLink" layoutX="216.0" layoutY="296.0" onAction="#signUpReporterForm" prefHeight="29.0" prefWidth="70.0" text="Sign up" textFill="#48a5ea">
+                    <font>
+                        <Font name="Arial Bold" size="15.0" />
+                    </font>
+                </Hyperlink>
+                <Label fx:id="signInReporterEmailLabel" layoutX="370.0" layoutY="95.0" prefHeight="43.0" prefWidth="440.0" textFill="RED" AnchorPane.leftAnchor="390.0" AnchorPane.rightAnchor="190.0">
+                    <font>
+                        <Font name="Arial" size="15.0" />
+                    </font>
+                </Label>
+                <Label fx:id="signInReporterPasswordLabel" layoutX="392.0" layoutY="153.0" prefHeight="43.0" prefWidth="440.0" textFill="RED" AnchorPane.leftAnchor="390.0" AnchorPane.rightAnchor="190.0">
+                    <font>
+                        <Font name="Arial" size="15.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+    </children>
+</Pane>
